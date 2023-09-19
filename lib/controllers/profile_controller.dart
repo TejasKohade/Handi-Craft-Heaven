@@ -40,16 +40,16 @@ class ProfileController extends GetxController {
     await store.set({
       'name': name,
       'password': password,
-      'imageurl': imgUrl,
+      'imageUrl': imgUrl,
     }, SetOptions(merge: true));
     isLoading(false);
   }
 
-  changeAuthPassword({email,password,newpassword}) async{
+  changeAuthPassword({email, password, newpassword}) async {
     final cred = EmailAuthProvider.credential(email: email, password: password);
-    await currentUser!.reauthenticateWithCredential(cred).then((value){
+    await currentUser!.reauthenticateWithCredential(cred).then((value) {
       currentUser!.updatePassword(newpassword);
-    }).catchError((error){
+    }).catchError((error) {
       print(error.toString());
     });
   }

@@ -1,5 +1,6 @@
 import 'package:e_mart_app/consts/consts.dart';
 import 'package:e_mart_app/consts/lists.dart';
+import 'package:e_mart_app/controllers/product_controller.dart';
 import 'package:e_mart_app/views/category_screen/category_details.dart';
 import 'package:e_mart_app/widgets_common/bg_widget.dart';
 // import 'package:flutter/cupertino.dart';
@@ -11,6 +12,7 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ProductController());
     return bgWidget(
       child: Scaffold(
         appBar: AppBar(
@@ -51,6 +53,7 @@ class CategoryScreen extends StatelessWidget {
                   .outerShadowSm
                   .make()
                   .onTap(() {
+                    controller.getSubCategories(categoriesList[index]);
                 Get.to(
                   () => CategoryDetails(
                     title: categoriesList[index],
