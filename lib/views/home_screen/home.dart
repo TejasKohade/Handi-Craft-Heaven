@@ -39,29 +39,34 @@ class Home extends StatelessWidget {
       )
     ];
 
-    return Scaffold(
-      body: Column(
-        children: [
-          Obx(
-            () => Expanded(
-              child: navbody.elementAt(
-                controller.currentNavIndex.value,
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        body: Column(
+          children: [
+            Obx(
+              () => Expanded(
+                child: navbody.elementAt(
+                  controller.currentNavIndex.value,
+                ),
               ),
             ),
+          ],
+        ),
+        bottomNavigationBar: Obx(
+          () => BottomNavigationBar(
+            currentIndex: controller.currentNavIndex.value,
+            backgroundColor: whiteColor,
+            type: BottomNavigationBarType.fixed,
+            selectedItemColor: redColor,
+            selectedLabelStyle: const TextStyle(fontFamily: semibold),
+            items: navbarItem,
+            onTap: (value) {
+              controller.currentNavIndex.value = value;
+            },
           ),
-        ],
-      ),
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          currentIndex: controller.currentNavIndex.value,
-          backgroundColor: whiteColor,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: redColor,
-          selectedLabelStyle: const TextStyle(fontFamily: semibold),
-          items: navbarItem,
-          onTap: (value) {
-            controller.currentNavIndex.value = value;
-          },
         ),
       ),
     );
