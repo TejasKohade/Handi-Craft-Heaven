@@ -57,3 +57,4 @@ const loggedin = "Logged in Successfully";
 const loggedout = "Logged out Successfully";
 const oldpass = "Old Password";
 const newpass = "New Password";
+const paypal = "Paypal",stripe = "Stripe",cod = "Cash on Delivery";

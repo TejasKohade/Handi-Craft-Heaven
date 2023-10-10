@@ -3,8 +3,7 @@ import 'package:e_mart_app/consts/consts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthController extends GetxController {
-  var isLoading=false.obs;
-
+  var isLoading = false.obs;
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   //login method
@@ -32,16 +31,16 @@ class AuthController extends GetxController {
 
   storeUserData({name, password, email}) async {
     DocumentReference store =
-        firestore.collection(usersCollection).doc(currentUser!.uid);
+        await firestore.collection(usersCollection).doc(currentUser!.uid);
     store.set({
       'name': name,
       'password': password,
       'email': email,
-      'imageurl': '',
+      'imageUrl': '',
       'id': currentUser!.uid,
-      'cart_count':"00",
-      'order_count':"00",
-      'wishlist_count':"00",
+      'cart_count': "00",
+      'order_count': "00",
+      'wishlist_count': "00",
     });
   }
 

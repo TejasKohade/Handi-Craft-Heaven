@@ -133,7 +133,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               if (isCheck != false) {
                                 controller.isLoading(true);
                                 try {
-
                                   await controller
                                       .signupMethod(
                                           context: context,
@@ -146,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         password: passwordController.text);
                                   }).then((value) {
                                     VxToast.show(context, msg: loggedin);
-                                    Get.offAll(() => Home());
+                                    Get.offAll(() => const Home());
                                   });
                                 } catch (e) {
                                   auth.signOut();

@@ -1,5 +1,6 @@
 import 'package:e_mart_app/consts/consts.dart';
 import 'package:e_mart_app/consts/images.dart';
+import 'package:e_mart_app/views/cart_screen/payment_method.dart';
 
 const socialIconList = [icFacebookLogo, icGoogleLogo, icTwitterLogo];
 const slidersList = [imgSlider1, imgSlider2, imgSlider3, imgSlider4];
@@ -53,3 +54,6 @@ const profileButtonsIcons = [
   icOrders,
   icMessages,
 ];
+
+const paymentMethodsImg = [imgPaypal,imgStripe,imgCod];
+const paymentMethods = [paypal,stripe,cod];

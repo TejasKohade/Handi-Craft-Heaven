@@ -4,6 +4,7 @@ import 'package:e_mart_app/views/cart_screen/cart_screen.dart';
 import 'package:e_mart_app/views/category_screen/category_screen.dart';
 import 'package:e_mart_app/views/home_screen/home_screen.dart';
 import 'package:e_mart_app/views/profile_screen/profile_screen.dart';
+import 'package:e_mart_app/widgets_common/exit_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,6 +42,10 @@ class Home extends StatelessWidget {
 
     return WillPopScope(
       onWillPop: () async {
+        showDialog(
+            barrierDismissible: false,
+            context: context,
+            builder: (context) => exitDialog(context));
         return false;
       },
       child: Scaffold(
