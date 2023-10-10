@@ -2,7 +2,6 @@ import 'package:e_mart_app/consts/consts.dart';
 import 'package:e_mart_app/consts/lists.dart';
 import 'package:e_mart_app/controllers/product_controller.dart';
 import 'package:e_mart_app/views/chat_screen/chat_screen.dart';
-// import 'package:e_mart_app/widgets_common/bg_widget.dart';
 import 'package:e_mart_app/widgets_common/our_button.dart';
 
 class ItemDetails extends StatelessWidget {
@@ -41,10 +40,10 @@ class ItemDetails extends StatelessWidget {
               () => IconButton(
                 onPressed: () {
                   if (controller.isFav.value) {
-                    controller.removeFromWishlist(data.id,context);
+                    controller.removeFromWishlist(data.id, context);
                     controller.isFav(false);
                   } else {
-                    controller.addtoWishlist(data.id,context);
+                    controller.addtoWishlist(data.id, context);
                     controller.isFav(true);
                   }
                 },
@@ -342,6 +341,7 @@ class ItemDetails extends StatelessWidget {
                   controller.addToCart(
                     color: data['p_colors'][controller.colorIndex.value],
                     context: context,
+                    vendorID: data['vendor_id'],
                     img: data['p_imgs'][0],
                     qty: controller.quantity.value,
                     sellername: data['p_seller'],

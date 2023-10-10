@@ -5,8 +5,6 @@ import 'package:e_mart_app/services/firestore_services.dart';
 import 'package:e_mart_app/views/cart_screen/shipping_screen.dart';
 import 'package:e_mart_app/widgets_common/loading_indicator.dart';
 import 'package:e_mart_app/widgets_common/our_button.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -19,13 +17,13 @@ class CartScreen extends StatelessWidget {
       bottomNavigationBar: SizedBox(
         height: 60,
         child: ourButton(
-              color: redColor,
-              onPress: () {
-                Get.to(()=>const ShippingDetails());
-              },
-              textColor: whiteColor,
-              title: "Proceed To Shipping",
-            ),
+          color: redColor,
+          onPress: () {
+            Get.to(() => const ShippingDetails());
+          },
+          textColor: whiteColor,
+          title: "Proceed To Shipping",
+        ),
       ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -49,7 +47,7 @@ class CartScreen extends StatelessWidget {
             controller.calculate(data);
             controller.productSnapshot = data;
             return Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Column(
                 children: [
                   Expanded(
@@ -57,12 +55,17 @@ class CartScreen extends StatelessWidget {
                       itemCount: data.length,
                       itemBuilder: (BuildContext context, int index) {
                         return ListTile(
-                          leading: Image.network('${data[index]['img']}'),
-                          title: "${data[index]['title']} (x${data[index]['qty']})"
-                              .text
-                              .fontFamily(semibold)
-                              .size(16)
-                              .make(),
+                          leading: Image.network(
+                            '${data[index]['img']}',
+                            fit: BoxFit.cover,
+                            width: 80,
+                          ),
+                          title:
+                              "${data[index]['title']} (x${data[index]['qty']})"
+                                  .text
+                                  .fontFamily(semibold)
+                                  .size(16)
+                                  .make(),
                           subtitle: "${data[index]['tprice']}"
                               .numCurrency
                               .text
@@ -98,7 +101,7 @@ class CartScreen extends StatelessWidget {
                     ],
                   )
                       .box
-                      .padding(EdgeInsets.all(12))
+                      .padding(const EdgeInsets.all(12))
                       .color(Lightgolden)
                       .width(context.screenWidth - 60)
                       .make(),
