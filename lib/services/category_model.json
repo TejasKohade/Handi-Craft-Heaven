@@ -1,0 +1,76 @@
+{
+  "categories": [
+    {
+      "name" : "Men Clothing & Fashion",
+      "subcategory" : [
+        "Outwear & Jackets",
+        "Formal Dress",
+        "Accessories"
+      ]
+    },
+    {
+      "name" : "Computer & Accessories",
+      "subcategory" : [
+        "Laptop",
+        "Gaming PC",
+        "Official Equipment"
+      ]
+    },
+    {
+    "name" : "Automobile",
+    "subcategory" : [
+      "Sports Car",
+      "Bikes",
+      "Sedan"
+    ]
+  },
+    {
+      "name" : "Kids Toys",
+      "subcategory" : [
+        "Below 8-yrs",
+        "Below 10-yrs",
+        "Below 15-yrs"
+      ]
+    },
+    {
+      "name" : "Sports",
+      "subcategory" : [
+        "Outdoor",
+        "Indoor",
+        "Electronic"
+      ]
+    },
+    {
+      "name" : "Cellphone & Tab",
+      "subcategory" : [
+        "Android",
+        "Apple",
+        "Other"
+      ]
+    },
+    {
+      "name" : "Jewelery",
+      "subcategory" : [
+        "Gold",
+        "Silver",
+        "Other"
+      ]
+    },
+    {
+      "name" : "Daily Needs",
+      "subcategory" : [
+        "Kitchen use",
+        "Maintenance use",
+        "Tools"
+      ]
+    },
+    {
+      "name" : "Furniture",
+      "subcategory" : [
+        "Sofas",
+        "Cupboard",
+        "Bed's"
+      ]
+    }
+  ]
+}
