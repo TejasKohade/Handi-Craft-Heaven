@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 class CartController extends GetxController {
   var totalP = 0.obs;
   var products = [];
+  var vendors = [];
   //text  controllers for shipping details
 
   var addressController = TextEditingController();
@@ -51,12 +52,14 @@ class CartController extends GetxController {
       'order_delivered': false,
       'total_amount': totalAmount,
       'orders': FieldValue.arrayUnion(products),
+      'vendors': FieldValue.arrayUnion(vendors),
     });
     placingOrder(false);
   }
 
   getProductDetails() {
     products.clear();
+    vendors.clear();
     for (int i = 0; i < productSnapshot.length; i++) {
       products.add({
         'color': productSnapshot[i]['color'],
@@ -66,8 +69,8 @@ class CartController extends GetxController {
         'title': productSnapshot[i]['title'],
         'qty': productSnapshot[i]['qty'],
       });
+      vendors.add(productSnapshot[i]['vendor_id']);
     }
-    print(products);
   }
 
   clearCart() {

@@ -12,7 +12,8 @@ class ItemDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var controller = Get.find<ProductController>();
+    // var controller = Get.find<ProductController>();
+    var controller = Get.put(ProductController());
     return WillPopScope(
       onWillPop: () async {
         controller.resetValues();
@@ -96,13 +97,18 @@ class ItemDetails extends StatelessWidget {
                         count: 5,
                       ),
                       10.heightBox,
-                      "${data['p_price']}"
-                          .numCurrency
-                          .text
-                          .color(redColor)
-                          .fontFamily(bold)
-                          .size(18)
-                          .make(),
+                      Row(
+                        children: [
+                          "Rs ".text.size(18).color(redColor).bold.make(),
+                          "${data['p_price']}"
+                              .numCurrency
+                              .text
+                              .color(redColor)
+                              .fontFamily(bold)
+                              .size(18)
+                              .make(),
+                        ],
+                      ),
                       10.heightBox,
                       Row(
                         children: [
@@ -338,17 +344,21 @@ class ItemDetails extends StatelessWidget {
               child: ourButton(
                 color: redColor,
                 onPress: () {
-                  controller.addToCart(
-                    color: data['p_colors'][controller.colorIndex.value],
-                    context: context,
-                    vendorID: data['vendor_id'],
-                    img: data['p_imgs'][0],
-                    qty: controller.quantity.value,
-                    sellername: data['p_seller'],
-                    title: data['p_name'],
-                    tprice: controller.totalPrice.value,
-                  );
-                  VxToast.show(context, msg: "Added To Cart");
+                  if (controller.quantity.value > 0) {
+                    controller.addToCart(
+                      color: data['p_colors'][controller.colorIndex.value],
+                      context: context,
+                      vendorID: data['vendor_id'],
+                      img: data['p_imgs'][0],
+                      qty: controller.quantity.value,
+                      sellername: data['p_seller'],
+                      title: data['p_name'],
+                      tprice: controller.totalPrice.value,
+                    );
+                    VxToast.show(context, msg: "Added To Cart");
+                  } else {
+                    VxToast.show(context, msg: "Minimum 1 Product is Required");
+                  }
                 },
                 textColor: whiteColor,
                 title: "Add To Cart",

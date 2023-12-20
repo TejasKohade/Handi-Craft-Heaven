@@ -32,11 +32,12 @@ class CategoryScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               return Column(
                 children: [
+                  15.heightBox,
                   Image.asset(
                     categoriesImages[index],
                     width: 200,
                     height: 120,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                   10.heightBox,
                   categoriesList[index]

@@ -1,5 +1,4 @@
 import 'package:e_mart_app/consts/consts.dart';
-import 'package:e_mart_app/consts/images.dart';
 import 'package:e_mart_app/views/cart_screen/payment_method.dart';
 
 const socialIconList = [icFacebookLogo, icGoogleLogo, icTwitterLogo];
@@ -14,15 +13,15 @@ const featuredTitles1 = [womenDress, girlsDress, girlsWatchs];
 const featuredTitles2 = [boysGlasses, mobilePhone, tShirt];
 
 const categoriesList = [
-  menClothing,
-  comAccess,
-  autoMobile,
-  kidToys,
-  sports,
-  cellPhone,
-  jewelery,
-  general,
-  furniture,
+  WomensTraditionalClothing,
+  KidsTraditionalClothing,
+  MensTraditionalClothing,
+  HomeDecor,
+  FlowerArr,
+  TraditionalBags,
+  WodenDecor,
+  Jewellery,
+  Saree,
 ];
 const categoriesImages = [
   imgFc1,

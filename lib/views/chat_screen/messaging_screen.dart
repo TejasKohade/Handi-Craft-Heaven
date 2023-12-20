@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_mart_app/consts/consts.dart';
 import 'package:e_mart_app/services/firestore_services.dart';
+import 'package:e_mart_app/views/chat_screen/chat_screen.dart';
 import 'package:e_mart_app/widgets_common/loading_indicator.dart';
 
 class MessagesScreen extends StatelessWidget {
@@ -11,7 +12,8 @@ class MessagesScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
-        title: "My Messages".text.fontFamily(semibold).color(darkFontGrey).make(),
+        title:
+            "My Messages".text.fontFamily(semibold).color(darkFontGrey).make(),
       ),
       body: StreamBuilder(
         stream: FirestoreServices.getAllMessages(),
@@ -27,7 +29,48 @@ class MessagesScreen extends StatelessWidget {
                 .fontFamily(semibold)
                 .makeCentered();
           } else {
-            return Container();
+            var data = snapshot.data!.docs;
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Card(
+                          child: ListTile(
+                            onTap: () {
+                              Get.to(() => const ChatScreen(), arguments: [
+                                data[index]['friendname'],
+                                data[index]['toId'],
+                              ]);
+                            },
+                            leading: const CircleAvatar(
+                              backgroundColor: redColor,
+                              child: Icon(
+                                Icons.person,
+                                color: whiteColor,
+                              ),
+                            ),
+                            title: "${data[index]['friendname']}"
+                                .text
+                                .color(darkFontGrey)
+                                .fontFamily(semibold)
+                                .make(),
+                            subtitle: "${data[index]['last_msg']}"
+                                .text
+                                .color(darkFontGrey)
+                                .fontFamily(semibold)
+                                .make(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            );
           }
         },
       ),

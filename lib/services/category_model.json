@@ -1,75 +1,74 @@
 {
   "categories": [
     {
-      "name" : "Men Clothing & Fashion",
+      "name" : "Women's Traditional Clothing",
       "subcategory" : [
-        "Outwear & Jackets",
-        "Formal Dress",
-        "Accessories"
+        "Marathi'",
+        "Rajasthani'",
+        "Gujarati'"
       ]
     },
     {
-      "name" : "Computer & Accessories",
+      "name" : "Kid's Traditional Clothing",
       "subcategory" : [
-        "Laptop",
-        "Gaming PC",
-        "Official Equipment"
+        "Marathi'",
+        "Rajasthani'",
+        "Gujarati'"
       ]
     },
     {
-    "name" : "Automobile",
+    "name" : "Men's Traditional Clothing",
     "subcategory" : [
-      "Sports Car",
-      "Bikes",
-      "Sedan"
+      "Marathi'",
+      "Rajasthani'",
+      "Gujarati'"
     ]
   },
     {
-      "name" : "Kids Toys",
+      "name" : "Home Decor",
       "subcategory" : [
-        "Below 8-yrs",
-        "Below 10-yrs",
-        "Below 15-yrs"
+        "Chandelier",
+        "Wall Hangings"
       ]
     },
     {
-      "name" : "Sports",
+      "name" : "Flower Arrangement",
       "subcategory" : [
-        "Outdoor",
-        "Indoor",
-        "Electronic"
+        "Flower Vase",
+        "Fruit Vase",
+        "Bonsai Pot"
       ]
     },
     {
-      "name" : "Cellphone & Tab",
+      "name" : "Wooden Decorative",
       "subcategory" : [
-        "Android",
-        "Apple",
-        "Other"
+        "Bajoot",
+        "Pan Dan",
+        "Dry Fruit Box"
       ]
     },
     {
-      "name" : "Jewelery",
+      "name" : "Traditional Bags",
       "subcategory" : [
-        "Gold",
-        "Silver",
-        "Other"
+        "Purse",
+        "Hand Bag",
+        "Mobile Pouch"
       ]
     },
     {
-      "name" : "Daily Needs",
+      "name" : "Saree's",
       "subcategory" : [
-        "Kitchen use",
-        "Maintenance use",
-        "Tools"
+        "Silk Saree",
+        "Cotton Saree",
+        "Chiffon Saree"
       ]
     },
     {
-      "name" : "Furniture",
+      "name" : "Jewellery",
       "subcategory" : [
-        "Sofas",
-        "Cupboard",
-        "Bed's"
+        "NeckLess",
+        "Ear Rings",
+        "Bangles"
       ]
     }
   ]
